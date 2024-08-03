@@ -78,6 +78,7 @@ const PokemonFilter = ({
           <div className="flex gap-1 ">
             <ChevronLeft
               style={{ opacity: canScrollLeft ? 1 : 0.5, cursor: "pointer" }}
+              onClick={scrollLeft}
             />
             <div
               className="flex gap-3 max-w-[32rem] overflow-scroll type-filter"
@@ -135,7 +136,7 @@ const PokemonFilter = ({
         {searchText && (
           <div
             onClick={clearSearchText}
-            className="absolute right-[5rem] top-[25%] font-bold"
+            className="absolute right-[5rem] top-[25%] font-bold cursor-pointer"
           >
             X
           </div>

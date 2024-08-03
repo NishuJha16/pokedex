@@ -24,7 +24,7 @@ const PokemonList = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const limit = 9;
   const [loading, setLoading] = useState<boolean>(false);
-
+  const [showMoreLoading, setShowMoreLoading] = useState<boolean>(false);
   const topRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [searchText, setSearchText] = useState<string>("");
@@ -88,7 +88,6 @@ const PokemonList = ({
     try {
       const data = await getPokemonByType(type);
       setTotalPokemons(data.pokemon.length);
-
       const updatedData = await Promise.all(
         data?.pokemon
           ?.slice(0, 9)
@@ -113,7 +112,7 @@ const PokemonList = ({
       start,
       end,
     });
-    setLoading(true);
+    setShowMoreLoading(true);
     try {
       const data = await getPokemonByType(pokemonType);
       setTotalPokemons(data.pokemon.length);
@@ -126,7 +125,7 @@ const PokemonList = ({
     } catch (error) {
       setTotalPokemons(0);
     } finally {
-      setLoading(false);
+      setShowMoreLoading(false);
     }
   };
 
@@ -165,20 +164,25 @@ const PokemonList = ({
         clearSearchText={clearSearchText}
         clearSelectedType={clearSelectedType}
       />
-      {(loading && pokemonType) || (totalPokemons && !loading) ? (
-        <div className="view">
-          {pokemons?.map((data: IPokemon, index) => (
-            <Card key={index} pokemon={data} />
-          ))}
+      {loading ? (
+        <div className="flex justify-center items-center flex-1 loading-screen">
+          <LoaderIcon className="w-[150px] h-[150px]" />
         </div>
       ) : (
-        !totalPokemons && (
-          <div className="flex justify-center items-center flex-1 min-h-[20rem]">
-            <div className="not-found-message"> Oops!! Pokemon not found</div>
+        !!totalPokemons && (
+          <div className="view">
+            {pokemons?.map((data: IPokemon, index) => (
+              <Card key={index} pokemon={data} />
+            ))}
           </div>
         )
       )}
-      {loading && (
+      {!totalPokemons && !loading && (
+        <div className="flex justify-center items-center flex-1 min-h-[20rem]">
+          <div className="not-found-message"> Oops!! Pokemon not found</div>
+        </div>
+      )}
+      {showMoreLoading && (
         <div className="flex justify-center items-center flex-1 loading-screen">
           <LoaderIcon className="w-[150px] h-[150px]" />
         </div>
