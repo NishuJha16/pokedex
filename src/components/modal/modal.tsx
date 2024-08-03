@@ -21,7 +21,11 @@ const Modal = ({
 
   const generateIcon = (type: string) => {
     const Icon = pokeTypes[type];
-    return <Icon width="16" height="16" className="type-icon" />;
+    return (
+      <div className="type-icon w-[16px] h-[16px]">
+        <Icon />
+      </div>
+    );
   };
   const handleImageLoad = () => {
     setImageLoaded(true);

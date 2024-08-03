@@ -181,7 +181,9 @@ const PokemonList = ({
       )}
       {loading && (
         <div className="flex justify-center items-center flex-1 loading-screen">
-          <LoaderIcon className="w-[150px] h-[150px]" />
+          <div className="w-[150px] h-[150px]">
+            <LoaderIcon />
+          </div>
         </div>
       )}
 

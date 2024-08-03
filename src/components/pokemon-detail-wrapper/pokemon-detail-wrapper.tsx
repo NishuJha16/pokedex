@@ -8,10 +8,14 @@ const PokemonDetailWrapper = ({ pokemon }: { pokemon: IPokemon }) => {
   return (
     <div className="poke-detail-container">
       <div className="p-6 max-w-[78rem] mx-auto">
-        <Logo className="logo-container" />
+        <div className="logo-container">
+          <Logo />
+        </div>
         {pokemon && <PokemonDetail pokemon={pokemon} />}
       </div>
-      <MovingWaves className="waves" />
+      <div className="waves">
+        <MovingWaves />
+      </div>
     </div>
   );
 };

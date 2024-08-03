@@ -45,7 +45,11 @@ const PokemonFilter = ({
 
   const generateIcon = (type: string) => {
     const Icon = pokeTypes[type];
-    return <Icon width="16" height="16" className="type-icon" />;
+    return (
+      <div className="type-icon w-[16px] h-[16px]">
+        <Icon />
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -77,10 +81,11 @@ const PokemonFilter = ({
         </div>
         {!pokemonType ? (
           <div className="flex gap-1 ">
-            <ChevronLeft
-              onClick={scrollLeft}
+            <div
               style={{ opacity: canScrollLeft ? 1 : 0.5, cursor: "pointer" }}
-            />
+            >
+              <ChevronLeft />
+            </div>
             <div
               className="flex gap-3 max-w-[32rem] overflow-scroll type-filter"
               ref={scrollRef}
@@ -100,10 +105,12 @@ const PokemonFilter = ({
                 </div>
               ))}
             </div>
-            <ChevronRight
+            <div
               onClick={scrollRight}
               style={{ opacity: canScrollRight ? 1 : 0.5, cursor: "pointer" }}
-            />
+            >
+              <ChevronRight />
+            </div>
           </div>
         ) : (
           <div className="flex gap-1">

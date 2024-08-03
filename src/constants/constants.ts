@@ -39,7 +39,7 @@ export const backgrounds: { [key: string]: string } = {
 };
 
 export const pokeTypes: {
-  [key: string]: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  [key: string]: string;
 } = {
   normal: Normal,
   fire: Fire,

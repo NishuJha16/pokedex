@@ -29,7 +29,11 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
   };
   const generateIcon = (type: string) => {
     const Icon = pokeTypes[type];
-    return <Icon width="16" height="16" className="type-icon" />;
+    return (
+      <div className="type-icon w-[16px] h-[16px]">
+        <Icon />
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -65,10 +69,9 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
               style={{ color: backgroundColor }}
               onClick={() => setIsModalOpen(true)}
             >
-              <Lightening
-                style={{ backgroundColor }}
-                className="rounded-full"
-              />
+              <div style={{ backgroundColor }} className="rounded-full">
+                <Lightening />
+              </div>
               More Details
             </button>
           </div>

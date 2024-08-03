@@ -28,10 +28,12 @@ const Pagination = ({
 
   return (
     <div className="flex gap-2 justify-center items-center">
-      <ChevronLeft
+      <div
         onClick={() => activePageIndex === 1 && updatePage(activePageIndex - 1)}
         style={{ opacity: activePageIndex === 1 ? 1 : 0.5 }}
-      />
+      >
+        <ChevronLeft />
+      </div>
       {paginationRange &&
         paginationRange!.map((data, index) => (
           <div
@@ -46,12 +48,14 @@ const Pagination = ({
             {data}
           </div>
         ))}
-      <ChevronRight
+      <div
         onClick={() =>
           activePageIndex !== lastPage && updatePage(activePageIndex + 1)
         }
         style={{ opacity: activePageIndex !== lastPage ? 1 : 0.5 }}
-      />
+      >
+        <ChevronRight />
+      </div>
     </div>
   );
 };
