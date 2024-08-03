@@ -15,12 +15,8 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
   const ref = useRef<HTMLImageElement>(null);
 
   const generateIcon = (type: string) => {
-    const Icon = pokeTypes[type];
-    return (
-      <div className="type-icon w-[16px] h-[16px]">
-        <img src={Icon} />
-      </div>
-    );
+    const Icon = pokeTypes[type] as any;
+    return <Icon className="type-icon w-[16px] h-[16px]" />;
   };
 
   const handleImageLoad = () => {

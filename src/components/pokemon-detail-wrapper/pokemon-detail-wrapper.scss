@@ -3,9 +3,11 @@
   position: relative;
   overflow: hidden;
 }
-.logo-container{
-  margin: 2rem auto 0;
-  transform: scale(1.5);
+.logo-container {
+  img {
+    transform: scale(1.5);
+    margin: 2rem auto 0;
+  }
 }
 .waves {
   width: 100%;
@@ -55,7 +57,9 @@
   }
 }
 @media (max-width: 61.25rem) {
-  .logo-container{
-    transform: none;
+  .logo-container {
+    img {
+      transform: none;
+    }
   }
 }

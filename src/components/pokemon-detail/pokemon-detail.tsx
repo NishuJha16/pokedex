@@ -27,13 +27,10 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
       setPokemonDescription(description);
     } catch (error) {}
   };
+
   const generateIcon = (type: string) => {
-    const Icon = pokeTypes[type];
-    return (
-      <div className="type-icon w-[16px] h-[16px]">
-        <img src={Icon} />
-      </div>
-    );
+    const Icon = pokeTypes[type] as any;
+    return <Icon className="type-icon w-[16px] h-[16px]" />;
   };
 
   useEffect(() => {
