@@ -8,7 +8,9 @@ export const getAllPokemons = async (limit: number, offset: number) => {
 };
 
 export const getPokemonByName = async (name: string) => {
-  const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  const response = await axios.get(
+    `https://pokeapi.co/api/v2/pokemon/${name?.toLowerCase()}`
+  );
   return response.data;
 };
 
