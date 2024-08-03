@@ -1,0 +1,177 @@
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(6, 11, 40, 0.15);
+  border-top: 1px solid rgb(36, 41, 63);
+  border-right: 1px solid rgb(36, 41, 63);
+  border-left: 1px solid rgb(36, 41, 63);
+  border-image: initial;
+  border-bottom: none;
+  border-radius: 1.5rem;
+  padding-top: 7rem;
+  position: relative;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: -1;
+  backface-visibility: hidden;
+  transform: translate3d(0px, 0px, 0px);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 12.5rem;
+    height: 12.5rem;
+    filter: blur(128px);
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.8s ease 0s;
+  }
+}
+
+.more-details {
+  width: 100%;
+  height: 3rem;
+  border-radius: 0px 0px 1.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 700;
+  color: white;
+}
+.type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: white;
+}
+.pokeid {
+  font-size: 1.25rem;
+  line-height: 135%;
+  font-weight: 700;
+}
+.pokename {
+  font-size: 2rem;
+  line-height: 135%;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0.25rem 0.5rem 0.75rem;
+}
+
+.normal::after {
+  background-color: rgb(159, 163, 157);
+}
+
+.fire::after {
+  background-color: rgb(255, 153, 0);
+}
+
+.water {
+  &::after {
+    background-color: rgb(20, 168, 255);
+  }
+}
+
+.electric::after {
+  background-color: rgb(255, 222, 0);
+}
+
+.grass::after {
+  background-color: rgb(28, 216, 14);
+}
+
+.ice::after {
+  background-color: rgb(46, 228, 198);
+}
+
+.fighting::after {
+  background-color: rgb(255, 33, 91);
+}
+
+.poison::after {
+  background-color: rgb(241, 73, 255);
+}
+
+.ground::after {
+  background-color: rgb(255, 107, 13);
+}
+
+.flying::after {
+  background-color: rgb(137, 189, 255);
+}
+
+.psychic::after {
+  background-color: rgb(255, 108, 100);
+}
+
+.bug::after {
+  background-color: rgb(123, 207, 0);
+}
+
+.rock::after {
+  background-color: rgb(216, 188, 90);
+}
+
+.ghost::after {
+  background-color: rgb(78, 106, 255);
+}
+
+.dragon::after {
+  background-color: rgb(0, 118, 255);
+}
+
+.dark::after {
+  background-color: rgb(90, 86, 106);
+}
+
+.steel::after {
+  background-color: rgb(35, 161, 189);
+}
+
+.fairy::after {
+  background-color: rgb(255, 118, 255);
+}
+
+.default::after {
+  background-color: white;
+}
+
+.type-icon {
+    path {
+        fill: white;
+    }
+}
+.skeleton{
+    background-image: linear-gradient(90deg, rgb(36, 41, 63) 0px, rgb(6, 11, 40) 50%, rgb(36, 41, 63) 100%);
+    background-color: rgb(36, 41, 63);
+    background-size: 200%;
+    border-radius: 50%;
+    animation: 1.5s linear 0s infinite normal none running circle
+}
+@keyframes circle {
+    0%{
+        background-position: 0 center;
+    }
+    100%{
+        background-position:-200% center;
+    }
+}

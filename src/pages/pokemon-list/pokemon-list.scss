@@ -1,0 +1,92 @@
+.view {
+  margin: 12.75rem auto 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12.5rem 2rem;
+}
+.not-found-message {
+  max-width: 21rem;
+  height: 3.5rem;
+  background: linear-gradient(rgb(21, 26, 55) 0%, rgba(21, 26, 55, 0) 100%);
+  border: 1px solid rgb(36, 41, 63);
+  border-radius: 0.5rem;
+  margin: 0px auto;
+  animation: 0.8s ease 0s 1 normal none running bjnKdr;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.loading-screen {
+  min-height: 40rem;
+}
+.filter-container {
+  border-bottom: 1px solid rgb(36, 41, 63);
+  margin: 3rem 0;
+  align-items: flex-end;
+  .type-filter {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .search-form {
+    justify-self: end;
+    width: 30.5rem;
+    height: 3.5rem;
+    display: flex;
+    border-radius: 0.5rem;
+    transition: all 0.4s ease 0s;
+    input {
+      flex: 1 1 0%;
+      background: none;
+      border: 0.13rem solid rgb(47, 90, 255);
+      border-radius: 0.5rem 0px 0px 0.5rem;
+      padding: 1rem;
+      font-family: Montserrat;
+      font-size: 1rem;
+      line-height: 150%;
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+      outline: none;
+    }
+    .search-button {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: rgb(47, 90, 255);
+      border-radius: 0px 0.5rem 0.5rem 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.show-more-button{
+  background: linear-gradient(rgb(21, 26, 55) 0%, rgba(21, 26, 55, 0) 100%);
+  border: 1px solid rgb(36, 41, 63);
+}
+@media (max-width: 61.25rem) {
+  .view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 40.25rem) {
+  .view {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .filter-container {
+    flex-direction: column;
+    gap: 2rem;
+    .type-filter-wrapper {
+      width: 100%;
+    }
+    .search-form {
+      width: 100%;
+    }
+    .type-filter {
+      max-width: 85%;
+    }
+  }
+}

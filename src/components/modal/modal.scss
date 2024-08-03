@@ -1,0 +1,229 @@
+.modal-backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+}
+.modal {
+  background: rgba(6, 11, 40, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 21rem 3.5rem 34.75rem;
+  align-items: end;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: 0.4s ease 0s 1 normal forwards running modal-open;
+  margin: 0px;
+
+  .pokemon-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    .pokemon-detail-background {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.5rem;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      overflow: hidden;
+      z-index: -1;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 12.5rem;
+        height: 12.5rem;
+        background: rgb(255, 153, 0);
+        filter: blur(128px);
+        position: absolute;
+        top: 0px;
+        left: 4.25rem;
+      }
+    }
+    .image {
+      position: absolute;
+      top: -9.38rem;
+      left: 2.5rem;
+    }
+  }
+  .pokeid {
+    font-size: 1.25rem;
+    line-height: 135%;
+    font-weight: 700;
+  }
+  .pokename {
+    font-size: 2rem;
+    line-height: 135%;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0.25rem 0.5rem 0.75rem;
+  }
+  .skeleton {
+    background-image: linear-gradient(
+      90deg,
+      rgb(36, 41, 63) 0px,
+      rgb(6, 11, 40) 50%,
+      rgb(36, 41, 63) 100%
+    );
+    background-color: rgb(36, 41, 63);
+    background-size: 200%;
+    border-radius: 50%;
+    animation: 1.5s linear 0s infinite normal none running circle;
+  }
+  @keyframes circle {
+    0% {
+      background-position: 0 center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+}
+@keyframes modal-open {
+  100% {
+    opacity: initial;
+    transform: initial;
+  }
+}
+.separator {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  &::after, &::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 7.75rem;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0px auto;
+  }
+}
+.stats-wrapper {
+  padding: 2.5rem 4.5rem 2.5rem 2.5rem;
+  .stats-title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .stats-list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    .stats-list {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 1rem;
+        line-height: 1;
+        font-weight: 400;
+        text-transform: uppercase;
+        display: inline-block;
+        &:nth-child(1) {
+          min-width: 7rem;
+        }
+        &:nth-child(2) {
+          min-width: 1.88rem;
+          margin: 0px 1.25rem;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+      .bar {
+        width: 100%;
+        height: 0.5rem;
+        border-radius: 0.25rem;
+        background: rgb(85, 85, 85);
+        overflow: hidden;
+        backface-visibility: hidden;
+        transform: translate3d(0px, 0px, 0px);
+      }
+      .filled-bar {
+        height: 0.5rem;
+        border-radius: 0.25rem;
+        transform: translate3d(-100%, 0px, 0px);
+        animation: 2s ease 0s 1 normal forwards running bar;
+      }
+      .filled-negative {
+        background: rgb(255, 54, 78);
+        box-shadow: rgba(255, 54, 78, 0.25) 0px 0px 0.75rem 0.25rem;
+      }
+      .filled-positive {
+        background: rgb(28, 216, 14);
+        box-shadow: rgba(28, 216, 14, 0.25) 0px 0px 0.75rem 0.25rem;
+      }
+
+      @keyframes bar {
+        100% {
+          transform: initial;
+        }
+      }
+    }
+  }
+}
+.cross-icon {
+  background: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+.cross-icon-mobile{
+    display: none;
+}
+@media (max-width: 61.25rem) {
+  .modal-backdrop {
+    align-items: start;
+  }
+  .modal {
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin: 9.5rem 1rem 1rem;
+    .pokemon-detail {
+      padding: 7rem 0 0;
+    }
+    .separator {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      svg {
+        transform: scale(0.75);
+        flex-shrink: 0;
+      }
+
+      &::before {
+        width: 100%;
+        height: 1px;
+      }
+      &::after {
+        width: 100%;
+        height: 1px;
+      }
+    }
+  }
+  .stats-wrapper {
+    padding: 0  1.5rem 2rem;
+  }
+  .cross-icon-mobile{
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  .cross-icon{
+    display: none;
+  }
+}
