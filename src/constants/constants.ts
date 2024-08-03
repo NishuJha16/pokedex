@@ -1,21 +1,24 @@
-import Normal from "../assets/icons/normal.svg";
-import Fire from "../assets/icons/fire.svg";
-import Water from "../assets/icons/water.svg";
-import Electric from "../assets/icons/electric.svg";
-import Grass from "../assets/icons/grass.svg";
-import Ice from "../assets/icons/ice.svg";
-import Fighting from "../assets/icons/fighting.svg";
-import Poison from "../assets/icons/poison.svg";
-import Ground from "../assets/icons/ground.svg";
-import Flying from "../assets/icons/flying.svg";
-import Psychic from "../assets/icons/psychic.svg";
-import Bug from "../assets/icons/bug.svg";
-import Rock from "../assets/icons/rock.svg";
-import Ghost from "../assets/icons/ghost.svg";
-import Dragon from "../assets/icons/dragon.svg";
-import Dark from "../assets/icons/dark.svg";
-import Steel from "../assets/icons/steel.svg";
-import Fairy from "../assets/icons/fairy.svg";
+import { FC, SVGProps } from "react";
+import {
+  Normal,
+  Fire,
+  Water,
+  Electric,
+  Grass,
+  Ice,
+  Fighting,
+  Poison,
+  Ground,
+  Flying,
+  Psychic,
+  Bug,
+  Rock,
+  Ghost,
+  Dragon,
+  Dark,
+  Steel,
+  Fairy,
+} from "./images";
 
 export const backgrounds: { [key: string]: string } = {
   normal: "rgb(159, 163, 157)",
@@ -39,7 +42,7 @@ export const backgrounds: { [key: string]: string } = {
 };
 
 export const pokeTypes: {
-  [key: string]: string;
+  [key: string]: FC<SVGProps<SVGSVGElement>>;
 } = {
   normal: Normal,
   fire: Fire,
