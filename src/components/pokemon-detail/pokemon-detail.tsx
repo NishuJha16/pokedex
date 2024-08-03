@@ -31,7 +31,7 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
     const Icon = pokeTypes[type];
     return (
       <div className="type-icon w-[16px] h-[16px]">
-        <Icon />
+        <img src={Icon} />
       </div>
     );
   };
