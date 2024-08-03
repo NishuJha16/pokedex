@@ -188,16 +188,18 @@ const PokemonList = ({
         </div>
       )}
 
-      {pokemonType && filterResultLimit.end < totalPokemons && (
+      {pokemonType && (
         <div className="flex justify-center items-center gap-6">
           <div ref={bottomRef} />
-          <button
-            className="px-6 flex gap-2 py-3 font-semibold rounded-lg show-more-button"
-            onClick={showMorePokemons}
-          >
-            <PlusIcon />
-            Show more results
-          </button>
+          {filterResultLimit.end < totalPokemons && (
+            <button
+              className="px-6 flex gap-2 py-3 font-semibold rounded-lg show-more-button"
+              onClick={showMorePokemons}
+            >
+              <PlusIcon />
+              Show more results
+            </button>
+          )}
           <button
             className="px-3 py-3 rounded-lg show-more-button"
             onClick={scrollToTop}
