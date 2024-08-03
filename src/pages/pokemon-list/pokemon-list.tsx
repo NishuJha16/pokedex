@@ -12,7 +12,6 @@ import Pagination from "../../components/pagination/pagination";
 import LoaderIcon from "../../assets/icons/loader.svg";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 import TopIcon from "../../assets/icons/arrow-top.svg";
-import { backgrounds, pokeTypes } from "../../constants/constants";
 import PokemonFilter from "./pokemon-filter";
 
 const PokemonList = ({
@@ -182,7 +181,7 @@ const PokemonList = ({
       {loading && (
         <div className="flex justify-center items-center flex-1 loading-screen">
           <div className="w-[150px] h-[150px]">
-            <LoaderIcon />
+            <img src={LoaderIcon} />
           </div>
         </div>
       )}
@@ -194,14 +193,14 @@ const PokemonList = ({
             className="px-6 flex gap-2 py-3 font-semibold rounded-lg show-more-button"
             onClick={showMorePokemons}
           >
-            <PlusIcon />
+            <img src={PlusIcon} />
             Show more results
           </button>
           <button
             className="px-3 py-3 rounded-lg show-more-button"
             onClick={scrollToTop}
           >
-            <TopIcon />
+            <img src={TopIcon} />
           </button>
         </div>
       )}

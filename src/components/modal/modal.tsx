@@ -87,14 +87,14 @@ const Modal = ({
           <div className="flex gap-4 my-6 flex-1">
             <div className="flex flex-col  items-center justify-center">
               <div className="flex gap-2 ">
-                <WeightIcon />
+                <img src={WeightIcon} />
                 <span className="font-semibold">{pokemon.weight} kg</span>
               </div>
               <span>Weight</span>
             </div>
             <div className="flex flex-col items-center justify-center">
               <div className="flex gap-2">
-                <HeightIcon />
+                <img src={HeightIcon} />
                 <span className="font-semibold">{pokemon.height} m</span>
               </div>
               <span>Height</span>
@@ -102,7 +102,7 @@ const Modal = ({
           </div>
         </div>
         <div className="separator">
-          <Pokeball />
+          <img src={Pokeball} />
         </div>
         <div className="stats-wrapper">
           <span className="stats-title">Stats</span>
@@ -126,11 +126,11 @@ const Modal = ({
           </ul>
         </div>
         <button className="cross-icon" onClick={onClose}>
-          <CrossIcon />
+          <img src={CrossIcon} />
         </button>
       </div>
       <button className="cross-icon-mobile" onClick={onClose}>
-        <CrossIcon />
+        <img src={CrossIcon} />
       </button>
     </div>
   );

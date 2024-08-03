@@ -1,12 +1,11 @@
 import {
   FormEventHandler,
-  MouseEvent,
   MouseEventHandler,
   useEffect,
   useRef,
   useState,
 } from "react";
-import ChevronLeft from "../../assets/icons/chevron-left.svg";
+import { default as ChevronLeft } from "../../assets/icons/chevron-left.svg";
 import ChevronRight from "../../assets/icons/chevron-right.svg";
 import SearchIcon from "../../assets/icons/search.svg";
 import { backgrounds, pokeTypes } from "../../constants/constants";
@@ -47,7 +46,7 @@ const PokemonFilter = ({
     const Icon = pokeTypes[type];
     return (
       <div className="type-icon w-[16px] h-[16px]">
-        <Icon />
+        <img src={Icon} />
       </div>
     );
   };
@@ -84,7 +83,7 @@ const PokemonFilter = ({
             <div
               style={{ opacity: canScrollLeft ? 1 : 0.5, cursor: "pointer" }}
             >
-              <ChevronLeft />
+              <img src={ChevronLeft} />
             </div>
             <div
               className="flex gap-3 max-w-[32rem] overflow-scroll type-filter"
@@ -109,7 +108,7 @@ const PokemonFilter = ({
               onClick={scrollRight}
               style={{ opacity: canScrollRight ? 1 : 0.5, cursor: "pointer" }}
             >
-              <ChevronRight />
+              <img src={ChevronRight} />
             </div>
           </div>
         ) : (
@@ -148,7 +147,7 @@ const PokemonFilter = ({
           </div>
         )}
         <button className="search-button">
-          <SearchIcon />
+          <img src={SearchIcon} />
         </button>
       </form>
     </div>

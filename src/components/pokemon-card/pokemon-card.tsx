@@ -18,7 +18,7 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
     const Icon = pokeTypes[type];
     return (
       <div className="type-icon w-[16px] h-[16px]">
-        <Icon />
+        <img src={Icon} />
       </div>
     );
   };
@@ -76,14 +76,14 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
         <div className="flex gap-4 my-6 flex-1">
           <div className="flex flex-col  items-center justify-center">
             <div className="flex gap-2 ">
-              <WeightIcon />
+              <img src={WeightIcon} />
               <span className="font-semibold">{pokemon.weight} kg</span>
             </div>
             <span>Weight</span>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="flex gap-2">
-              <HeightIcon />
+              <img src={HeightIcon} />
               <span className="font-semibold">{pokemon.height} m</span>
             </div>
             <span>Height</span>
@@ -94,7 +94,7 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
           style={{ backgroundColor }}
           onClick={() => setIsModalOpen(true)}
         >
-          <LighteningIcon />
+          <img src={LighteningIcon} />
           More details
         </button>
       </div>

@@ -32,7 +32,7 @@ const Pagination = ({
         onClick={() => activePageIndex === 1 && updatePage(activePageIndex - 1)}
         style={{ opacity: activePageIndex === 1 ? 1 : 0.5 }}
       >
-        <ChevronLeft />
+        <img src={ChevronLeft} />
       </div>
       {paginationRange &&
         paginationRange!.map((data, index) => (
@@ -54,7 +54,7 @@ const Pagination = ({
         }
         style={{ opacity: activePageIndex !== lastPage ? 1 : 0.5 }}
       >
-        <ChevronRight />
+        <img src={ChevronRight} />
       </div>
     </div>
   );
