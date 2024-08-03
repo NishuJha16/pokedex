@@ -11,9 +11,7 @@ const PokemonDetailWrapper = ({ pokemon }: { pokemon: IPokemon }) => {
         <Logo className="logo-container" />
         {pokemon && <PokemonDetail pokemon={pokemon} />}
       </div>
-      <div className="waves">
-        <MovingWaves />
-      </div>
+      <MovingWaves className="waves" />
     </div>
   );
 };
