@@ -1,5 +1,5 @@
-import ChevronLeft from "../../assets/icons/chevron-left.svg";
-import ChevronRight from "../../assets/icons/chevron-right.svg";
+import { ReactComponent as ChevronLeft } from "../../assets/icons/chevron-left.svg";
+import { ReactComponent as ChevronRight } from "../../assets/icons/chevron-right.svg";
 import { DOTS, usePagination } from "./usePagination";
 
 const Pagination = ({
@@ -32,7 +32,7 @@ const Pagination = ({
         onClick={() => activePageIndex === 1 && updatePage(activePageIndex - 1)}
         style={{ opacity: activePageIndex === 1 ? 1 : 0.5 }}
       >
-        <img src={ChevronLeft} />
+        <ChevronLeft />
       </div>
       {paginationRange &&
         paginationRange!.map((data, index) => (
@@ -54,7 +54,7 @@ const Pagination = ({
         }
         style={{ opacity: activePageIndex !== lastPage ? 1 : 0.5 }}
       >
-        <img src={ChevronRight} />
+        <ChevronRight />
       </div>
     </div>
   );

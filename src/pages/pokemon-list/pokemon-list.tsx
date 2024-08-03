@@ -9,9 +9,9 @@ import Card from "../../components/pokemon-card/pokemon-card";
 import { IPokemon } from "../../types";
 import "./pokemon-list.scss";
 import Pagination from "../../components/pagination/pagination";
-import LoaderIcon from "../../assets/icons/loader.svg";
-import PlusIcon from "../../assets/icons/plus-icon.svg";
-import TopIcon from "../../assets/icons/arrow-top.svg";
+import { ReactComponent as LoaderIcon } from "../../assets/icons/loader.svg";
+import { ReactComponent as PlusIcon } from "../../assets/icons/plus-icon.svg";
+import { ReactComponent as TopIcon } from "../../assets/icons/arrow-top.svg";
 import PokemonFilter from "./pokemon-filter";
 
 const PokemonList = ({
@@ -180,9 +180,7 @@ const PokemonList = ({
       )}
       {loading && (
         <div className="flex justify-center items-center flex-1 loading-screen">
-          <div className="w-[150px] h-[150px]">
-            <img src={LoaderIcon} />
-          </div>
+          <LoaderIcon className="w-[150px] h-[150px]" />
         </div>
       )}
 
@@ -193,14 +191,14 @@ const PokemonList = ({
             className="px-6 flex gap-2 py-3 font-semibold rounded-lg show-more-button"
             onClick={showMorePokemons}
           >
-            <img src={PlusIcon} />
+            <PlusIcon />
             Show more results
           </button>
           <button
             className="px-3 py-3 rounded-lg show-more-button"
             onClick={scrollToTop}
           >
-            <img src={TopIcon} />
+            <TopIcon />
           </button>
         </div>
       )}

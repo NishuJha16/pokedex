@@ -1,9 +1,9 @@
 import { backgrounds, pokeTypes } from "../../constants/constants";
 import { IPokemon } from "../../types";
 import "./pokemon-card.scss";
-import LighteningIcon from "../../assets/icons/lightening.svg";
-import WeightIcon from "../../assets/icons/weight.svg";
-import HeightIcon from "../../assets/icons/height.svg";
+import { ReactComponent as LighteningIcon } from "../../assets/icons/lightening.svg";
+import { ReactComponent as WeightIcon } from "../../assets/icons/weight.svg";
+import { ReactComponent as HeightIcon } from "../../assets/icons/height.svg";
 import { Fragment, useEffect, useRef, useState } from "react";
 import Modal from "../modal/modal";
 
@@ -72,14 +72,14 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
         <div className="flex gap-4 my-6 flex-1">
           <div className="flex flex-col  items-center justify-center">
             <div className="flex gap-2 ">
-              <img src={WeightIcon} />
+              <WeightIcon />
               <span className="font-semibold">{pokemon.weight} kg</span>
             </div>
             <span>Weight</span>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="flex gap-2">
-              <img src={HeightIcon} />
+              <HeightIcon />
               <span className="font-semibold">{pokemon.height} m</span>
             </div>
             <span>Height</span>
@@ -90,7 +90,7 @@ const Card = ({ pokemon }: { pokemon: IPokemon }) => {
           style={{ backgroundColor }}
           onClick={() => setIsModalOpen(true)}
         >
-          <img src={LighteningIcon} />
+          <LighteningIcon />
           More details
         </button>
       </div>

@@ -1,6 +1,6 @@
 import { IPokemon } from "../../types";
 import "./pokemon-detail.scss";
-import Lightening from "../../assets/icons/lightening.svg";
+import { ReactComponent as Lightening } from "../../assets/icons/lightening.svg";
 import { useEffect, useState } from "react";
 import { getPokemonDescription } from "../../services/pokemons.service";
 import { backgrounds, pokeTypes } from "../../constants/constants";
@@ -66,9 +66,10 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
               style={{ color: backgroundColor }}
               onClick={() => setIsModalOpen(true)}
             >
-              <div style={{ backgroundColor }} className="rounded-full">
-                <img src={Lightening} />
-              </div>
+              <Lightening
+                style={{ backgroundColor }}
+                className="rounded-full"
+              />
               More Details
             </button>
           </div>

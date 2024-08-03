@@ -1,11 +1,11 @@
 import { IPokemon } from "../../types";
 import "./modal.scss";
-import CrossIcon from "../../assets/icons/cross-icon.svg";
-import Pokeball from "../../assets/icons/pokeball.svg";
+import { ReactComponent as CrossIcon } from "../../assets/icons/cross-icon.svg";
+import { ReactComponent as Pokeball } from "../../assets/icons/pokeball.svg";
 import { useEffect, useRef, useState } from "react";
 import { backgrounds, pokeTypes } from "../../constants/constants";
-import WeightIcon from "../../assets/icons/weight.svg";
-import HeightIcon from "../../assets/icons/height.svg";
+import { ReactComponent as WeightIcon } from "../../assets/icons/weight.svg";
+import { ReactComponent as HeightIcon } from "../../assets/icons/height.svg";
 
 const Modal = ({
   pokemon,
@@ -84,14 +84,14 @@ const Modal = ({
           <div className="flex gap-4 my-6 flex-1">
             <div className="flex flex-col  items-center justify-center">
               <div className="flex gap-2 ">
-                <img src={WeightIcon} />
+                <WeightIcon />
                 <span className="font-semibold">{pokemon.weight} kg</span>
               </div>
               <span>Weight</span>
             </div>
             <div className="flex flex-col items-center justify-center">
               <div className="flex gap-2">
-                <img src={HeightIcon} />
+                <HeightIcon />
                 <span className="font-semibold">{pokemon.height} m</span>
               </div>
               <span>Height</span>
@@ -99,7 +99,7 @@ const Modal = ({
           </div>
         </div>
         <div className="separator">
-          <img src={Pokeball} />
+          <Pokeball />
         </div>
         <div className="stats-wrapper">
           <span className="stats-title">Stats</span>
@@ -123,11 +123,11 @@ const Modal = ({
           </ul>
         </div>
         <button className="cross-icon" onClick={onClose}>
-          <img src={CrossIcon} />
+          <CrossIcon />
         </button>
       </div>
       <button className="cross-icon-mobile" onClick={onClose}>
-        <img src={CrossIcon} />
+        <CrossIcon />
       </button>
     </div>
   );

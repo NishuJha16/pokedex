@@ -5,9 +5,9 @@ import {
   useRef,
   useState,
 } from "react";
-import { default as ChevronLeft } from "../../assets/icons/chevron-left.svg";
-import ChevronRight from "../../assets/icons/chevron-right.svg";
-import SearchIcon from "../../assets/icons/search.svg";
+import { ReactComponent as ChevronLeft } from "../../assets/icons/chevron-left.svg";
+import { ReactComponent as ChevronRight } from "../../assets/icons/chevron-right.svg";
+import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
 import { backgrounds, pokeTypes } from "../../constants/constants";
 
 const PokemonFilter = ({
@@ -76,11 +76,9 @@ const PokemonFilter = ({
         </div>
         {!pokemonType ? (
           <div className="flex gap-1 ">
-            <div
+            <ChevronLeft
               style={{ opacity: canScrollLeft ? 1 : 0.5, cursor: "pointer" }}
-            >
-              <img src={ChevronLeft} />
-            </div>
+            />
             <div
               className="flex gap-3 max-w-[32rem] overflow-scroll type-filter"
               ref={scrollRef}
@@ -100,11 +98,11 @@ const PokemonFilter = ({
                 </div>
               ))}
             </div>
-            <div
-              onClick={scrollRight}
-              style={{ opacity: canScrollRight ? 1 : 0.5, cursor: "pointer" }}
-            >
-              <img src={ChevronRight} />
+            <div>
+              <ChevronRight
+                onClick={scrollRight}
+                style={{ opacity: canScrollRight ? 1 : 0.5, cursor: "pointer" }}
+              />
             </div>
           </div>
         ) : (
@@ -143,7 +141,7 @@ const PokemonFilter = ({
           </div>
         )}
         <button className="search-button">
-          <img src={SearchIcon} />
+          <SearchIcon />
         </button>
       </form>
     </div>
