@@ -70,7 +70,7 @@ const PokemonDetail = ({ pokemon }: { pokemon: IPokemon }) => {
               onClick={() => setIsModalOpen(true)}
             >
               <div style={{ backgroundColor }} className="rounded-full">
-                <Lightening />
+                <img src={Lightening} />
               </div>
               More Details
             </button>
